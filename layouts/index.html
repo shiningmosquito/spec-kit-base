@@ -1,0 +1,78 @@
+{{ define "main" }}
+<div class="container hero-container-layout">
+  <section class="hero-section">
+    <div class="badge">HUGO v0.163.1 + GO LANG</div>
+    <h1 class="hero-title">開始你的現代化<br><span class="gradient-text">靜態網頁開發之旅</span></h1>
+    <p class="hero-subtitle">{{ .Site.Params.description }}</p>
+    
+    <div class="cta-buttons">
+      <a href="#quick-start" class="btn btn-primary">快速開始 &rarr;</a>
+      <a href="https://gohugo.io/documentation/" target="_blank" rel="noopener" class="btn btn-secondary">Hugo 官方文件</a>
+    </div>
+  </section>
+
+  <section class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">⚡</div>
+      <h3>極速編譯效能</h3>
+      <p>基於 Go Lang 驅動，毫秒級的頁面編譯速度。即使擁有數萬張頁面，也能在數秒內完成靜態化建置。</p>
+    </div>
+    
+    <div class="feature-card">
+      <div class="feature-icon">☁️</div>
+      <h3>CDN 佈署優化</h3>
+      <p>全站採用相對路徑設計與預設壓縮，完美相容 Netlify、Vercel、Cloudflare Pages 與 AWS CloudFront 等主流 CDN。</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">⚙️</div>
+      <h3>環境一鍵設定</h3>
+      <p>內建 <code>setup.sh</code> 腳本，自動辨識 Windows 與 macOS 作業系統，免去繁瑣的 Go SDK 及 Hugo 安裝流程。</p>
+    </div>
+  </section>
+
+  <section id="quick-start" class="quick-start-section">
+    <div class="glass-card">
+      <h2 class="section-title">快速啟動專案</h2>
+      
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h4>初始化環境</h4>
+            <p>在專案根目錄下執行設定腳本，自動下載安裝 Go 環境及指定版 Hugo：</p>
+            <pre><code>bash setup.sh</code></pre>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h4>啟動本地開發伺服器</h4>
+            <p>使用 Hugo 的本地熱重載伺服器，即時預覽網頁修改：</p>
+            <pre><code>npm run dev</code></pre>
+            <p class="info-note">或者手動執行： <code>./bin/hugo server</code></p>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h4>產生靜態網站</h4>
+            <p>編譯最終的網頁靜態檔，產出檔案會放置於 <code>public/</code> 目錄：</p>
+            <pre><code>npm run build</code></pre>
+            <p class="info-note">或者手動執行： <code>./bin/hugo --minify</code></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="content-preview-section">
+    <h2 class="section-title">頁面內容範例</h2>
+    <div class="content-box">
+      {{ .Content }}
+    </div>
+  </section>
+</div>
+{{ end }}

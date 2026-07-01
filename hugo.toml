@@ -1,0 +1,27 @@
+# Hugo Configuration for Premium Project Skeleton
+baseURL = '/'
+locale = 'zh-tw'
+title = 'Hugo 靜態網站專案空殼'
+
+# Enable relative URLs for easy deployment to any CDN (e.g., Netlify, Vercel, Cloudflare Pages, S3)
+relativeURLs = true
+canonifyURLs = false
+
+[params]
+  description = '一個基於 Hugo v0.163.1 打造的現代化、極簡且美觀的靜態網站空殼專案'
+  author = 'Antigravity'
+  # Custom menu configuration
+  [[params.menu]]
+    name = '首頁'
+    url = '/'
+  [[params.menu]]
+    name = '關於我們'
+    url = '/about/'
+  [[params.menu]]
+    name = '文章'
+    url = '/posts/'
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true # Allow HTML in Markdown files

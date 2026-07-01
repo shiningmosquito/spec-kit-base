@@ -1,0 +1,35 @@
+{{ define "main" }}
+<div class="container list-container">
+  <div class="list-header">
+    <h1 class="list-title">{{ .Title }}</h1>
+    {{ if .Description }}
+      <p class="list-description">{{ .Description }}</p>
+    {{ end }}
+  </div>
+
+  <div class="articles-list">
+    {{ range .Pages }}
+      <article class="list-card glass-card">
+        <h2 class="card-title">
+          <a href="{{ .RelPermalink }}" class="card-link">{{ .Title }}</a>
+        </h2>
+        <div class="card-meta">
+          {{ if not .Date.IsZero }}
+            <span class="card-date">📅 {{ .Date.Format "2006-01-02" }}</span>
+          {{ end }}
+        </div>
+        <p class="card-summary">{{ .Summary | truncate 150 }}</p>
+        <a href="{{ .RelPermalink }}" class="read-more">閱讀更多 &rarr;</a>
+      </article>
+    {{ else }}
+      <div class="empty-list glass-card">
+        <p>目前尚無任何文章。</p>
+      </div>
+    {{ end }}
+  </div>
+
+  <footer class="list-footer">
+    <a href="{{ "/" | relURL }}" class="btn btn-secondary">&larr; 返回首頁</a>
+  </footer>
+</div>
+{{ end }}
