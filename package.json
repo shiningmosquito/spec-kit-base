@@ -3,15 +3,14 @@
   "version": "1.0.0",
   "description": "Hugo skeleton project template with setup script",
   "scripts": {
-    "dev": "hugo server",
-    "build": "hugo --minify"
+    "postinstall": "npm run setup",
+    "setup": "bash setup.sh",
+    "dev": "./bin/hugo server",
+    "build": "./bin/hugo --minify"
   },
-  "devDependencies": {
-    "hugo-bin": "^0.149.2"
-  },
-  "hugo-bin": {
-    "version": "0.152.2",
-    "buildTags": "extended"
+  "config": {
+    "hugo": "0.163.3",
+    "go": "1.22.4"
   },
   "keywords": [
     "hugo",
