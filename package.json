@@ -1,0 +1,23 @@
+{
+  "name": "hugo-skeleton-project",
+  "version": "1.0.0",
+  "description": "Hugo skeleton project template with setup script",
+  "scripts": {
+    "postinstall": "npm run setup",
+    "setup": "bash setup.sh",
+    "dev": "./bin/hugo server",
+    "build": "./bin/hugo --minify"
+  },
+  "config": {
+    "hugo": "0.163.3",
+    "go": "1.22.4"
+  },
+  "keywords": [
+    "hugo",
+    "static-site",
+    "skeleton",
+    "cdn"
+  ],
+  "author": "Antigravity",
+  "license": "MIT"
+}

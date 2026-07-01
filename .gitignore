@@ -1,0 +1,21 @@
+# Node dependencies
+node_modules/
+
+# Local binaries and downloads
+bin/
+
+# Build outputs
+public/
+resources/
+
+# OS files
+.DS_Store
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Hugo lock files
+.hugo_build.lock
+

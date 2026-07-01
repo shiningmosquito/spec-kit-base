@@ -1,0 +1,28 @@
+{{ define "main" }}
+<div class="container article-container">
+  <article class="single-article glass-card">
+    <header class="article-header">
+      <h1 class="article-title">{{ .Title }}</h1>
+      <div class="article-meta">
+        {{ if not .Date.IsZero }}
+          <span class="meta-item date">📅 {{ .Date.Format "2006-01-02" }}</span>
+        {{ end }}
+        {{ if .Params.author }}
+          <span class="meta-item author">✍️ {{ .Params.author }}</span>
+        {{ end }}
+        {{ if .Params.categories }}
+          <span class="meta-item categories">📁 {{ range .Params.categories }}{{ . }} {{ end }}</span>
+        {{ end }}
+      </div>
+    </header>
+    
+    <div class="article-body">
+      {{ .Content }}
+    </div>
+    
+    <footer class="article-footer">
+      <a href="{{ "/" | relURL }}" class="btn btn-secondary">&larr; 返回首頁</a>
+    </footer>
+  </article>
+</div>
+{{ end }}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="{{ .Language.Lang | default "en" }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+  
+  <!-- SEO & OpenGraph Meta Tags -->
+  <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Summary }}{{ end }}">
+  <meta name="author" content="{{ .Site.Params.author | default "Antigravity" }}">
+  <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
+  <meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Summary }}{{ end }}">
+  <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+  
+  <!-- Premium Fonts (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+</head>
+<body>
+  <div class="glass-bg"></div>
+  <div class="circle-glow glow-1"></div>
+  <div class="circle-glow glow-2"></div>
+
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="{{ "/" | relURL }}" class="logo-link">
+        <span class="logo-text">HUGO</span>
+        <span class="logo-subtext">SKELETON</span>
+      </a>
+      
+      <nav class="main-nav">
+        <ul class="nav-links">
+          {{ range .Site.Params.menu }}
+            <li><a href="{{ .url | relURL }}" class="nav-link">{{ .name }}</a></li>
+          {{ end }}
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <p class="copyright">&copy; {{ now.Format "2006" }} {{ .Site.Title }}. All rights reserved.</p>
+      <p class="footer-credit">Built with <span class="heart">&hearts;</span> using Hugo v{{ .Site.Hugo.Version }}</p>
+    </div>
+  </footer>
+</body>
+</html>
