@@ -2,7 +2,7 @@
 title: "Hugo Premium Project Skeleton"
 date: 2026-06-15T15:20:00+08:00
 draft: false
-description: "基於 Hugo v0.163.1 打造的現代化、極簡且美觀的靜態網站空殼專案"
+description: "基於 Hugo v0.163.3 打造的現代化、極簡且美觀的靜態網站空殼專案"
 ---
 
 ## 歡迎使用您的 Hugo 專案
