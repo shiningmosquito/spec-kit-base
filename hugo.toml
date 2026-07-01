@@ -4,7 +4,7 @@ locale = 'zh-tw'
 title = 'Hugo 靜態網站專案空殼'
 
 # Enable relative URLs for easy deployment to any CDN (e.g., Netlify, Vercel, Cloudflare Pages, S3)
-relativeURLs = true
+relativeURLs = false
 canonifyURLs = false
 
 [params]
